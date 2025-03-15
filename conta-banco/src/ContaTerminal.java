@@ -3,8 +3,7 @@ import java.util.Scanner;
 
 public class ContaTerminal {
     public static void main(String[] args) throws Exception {
-
-       try( Scanner scanner = new Scanner(System.in).useLocale(Locale.US)){
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
         System.out.println("Seja bem-vindo ao bando digital! Vamos realizar o cadastro, primeiro, qual é o seu nome?");
         String nome = scanner.nextLine();
@@ -17,11 +16,9 @@ public class ContaTerminal {
         
         System.out.println("Ok, agora digite o saldo inicial para a conta!");
         double saldo = scanner.nextDouble();
+        scanner.close();
         
         System.out.println("Olá " + nome + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia + ", conta " + conta + " e seu saldo R$" + saldo + " já está disponível para saque!");
-       
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
+        
     }
 }
